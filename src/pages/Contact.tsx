@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { TbArrowUpRight, TbBrandGithub, TbBrandLinkedin, TbClock, TbMapPin } from 'react-icons/tb'
+import { TbArrowUpRight, TbBrandGithub, TbBrandLinkedin, TbBuilding, TbClock, TbMapPin } from 'react-icons/tb'
 import { ContactForm } from '../components/contact/ContactForm'
 import { PageTransition } from '../components/layout/PageTransition'
 import { CopyEmail } from '../components/ui/CopyEmail'
@@ -82,6 +82,10 @@ export default function Contact() {
               </span>
               <TbMapPin aria-hidden className="text-cyan" />
               {profile.location} · {profile.country}
+            </p>
+            <p className="flex items-center gap-3 pl-[22px]">
+              <TbBuilding aria-hidden className="text-cyan" />
+              {profile.locationNote}
             </p>
             <p className="flex items-center gap-3 pl-[22px]">
               <TbClock aria-hidden className="text-cyan" />

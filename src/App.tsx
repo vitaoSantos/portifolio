@@ -1,6 +1,6 @@
 import { useLenis } from 'lenis/react'
 import { AnimatePresence, MotionConfig } from 'motion/react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router'
 import { Background } from './components/layout/Background'
 import { Cursor } from './components/layout/Cursor'
 import { Footer } from './components/layout/Footer'
@@ -14,7 +14,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import ProjectDetail from './pages/ProjectDetail'
 import Projects from './pages/Projects'
-import Prototypes from './pages/Prototypes'
+import Teaching from './pages/Teaching'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -33,7 +33,8 @@ function AnimatedRoutes() {
         <Route path="/sobre" element={<About />} />
         <Route path="/projetos" element={<Projects />} />
         <Route path="/projetos/:slug" element={<ProjectDetail />} />
-        <Route path="/prototipos" element={<Prototypes />} />
+        <Route path="/ensino" element={<Teaching />} />
+        <Route path="/prototipos" element={<Navigate to="/ensino" replace />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

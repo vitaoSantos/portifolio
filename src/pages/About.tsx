@@ -66,6 +66,7 @@ export default function About() {
               <p className="mt-2 text-fg">
                 {profile.location} · {profile.country}
               </p>
+              <p className="mt-1 text-sm text-muted">{profile.locationNote}</p>
             </div>
             <div className="rounded-2xl border border-line bg-ink-2/70 p-5">
               <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-faint">

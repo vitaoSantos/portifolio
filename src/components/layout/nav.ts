@@ -2,7 +2,7 @@ export const navLinks = [
   { to: '/', label: 'Início' },
   { to: '/sobre', label: 'Sobre' },
   { to: '/projetos', label: 'Projetos' },
-  { to: '/prototipos', label: 'Protótipos' },
+  { to: '/ensino', label: 'Ensino' },
   { to: '/contato', label: 'Contato' },
 ]
 

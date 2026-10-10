@@ -91,7 +91,7 @@ export const timeline: TimelineEntry[] = [
     period: 'fev/2025 – atual',
     title: 'Engenheiro de Software',
     org: 'Fortram Soluções Digitais',
-    place: 'Poços de Caldas, MG',
+    place: 'Sede em Poços de Caldas, MG',
     kind: 'trabalho',
     description:
       'Desenvolvimento full stack da arquitetura à entrega: PWAs, microsserviços com foco em segurança e escalabilidade, modelagem de MySQL e integração de soluções de IA com scripts e automações.',
