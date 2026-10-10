@@ -1,6 +1,7 @@
 import { AIWorkflow } from '../components/home/AIWorkflow'
 import { FeaturedProjects } from '../components/home/FeaturedProjects'
 import { FinalCTA } from '../components/home/FinalCTA'
+import { Guestbook } from '../components/home/Guestbook'
 import { HomeHero } from '../components/home/HomeHero'
 import { Stats } from '../components/home/Stats'
 import { TechMarquee } from '../components/home/TechMarquee'
@@ -16,6 +17,7 @@ export default function Home() {
       <Stats />
       <FeaturedProjects />
       <AIWorkflow />
+      <Guestbook />
       <FinalCTA />
     </PageTransition>
   )

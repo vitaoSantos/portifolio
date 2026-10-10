@@ -8,6 +8,7 @@ import { Loader } from './components/layout/Loader'
 import { Navbar } from './components/layout/Navbar'
 import { SmoothScroll } from './components/layout/SmoothScroll'
 import { IntroProvider } from './context/IntroContext'
+import { VisitsProvider } from './context/VisitsContext'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
@@ -15,6 +16,7 @@ import NotFound from './pages/NotFound'
 import ProjectDetail from './pages/ProjectDetail'
 import Projects from './pages/Projects'
 import Teaching from './pages/Teaching'
+import Admin from './pages/Admin'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -36,6 +38,7 @@ function AnimatedRoutes() {
         <Route path="/ensino" element={<Teaching />} />
         <Route path="/prototipos" element={<Navigate to="/ensino" replace />} />
         <Route path="/contato" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
@@ -47,16 +50,18 @@ export default function App() {
     <BrowserRouter>
       <MotionConfig reducedMotion="user">
         <IntroProvider>
-          <SmoothScroll>
-            <Background />
-            <Loader />
-            <Cursor />
-            <Navbar />
-            <main id="conteudo">
-              <AnimatedRoutes />
-            </main>
-            <Footer />
-          </SmoothScroll>
+          <VisitsProvider>
+            <SmoothScroll>
+              <Background />
+              <Loader />
+              <Cursor />
+              <Navbar />
+              <main id="conteudo">
+                <AnimatedRoutes />
+              </main>
+              <Footer />
+            </SmoothScroll>
+          </VisitsProvider>
         </IntroProvider>
       </MotionConfig>
     </BrowserRouter>

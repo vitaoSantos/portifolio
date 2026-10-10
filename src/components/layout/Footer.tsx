@@ -2,6 +2,7 @@ import { TbArrowUpRight, TbMail } from 'react-icons/tb'
 import { Link } from 'react-router'
 import { profile } from '../../data/profile'
 import { socialLinks } from '../../data/social'
+import { VisitorCount } from '../ui/VisitorCount'
 import { navLinks } from './nav'
 
 export function Footer() {
@@ -56,7 +57,10 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} {profile.name}
         </span>
-        <span>Feito com React, Three.js e Claude</span>
+        <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <VisitorCount />
+          <span>Feito com React, Three.js e Claude</span>
+        </span>
       </div>
 
       <p

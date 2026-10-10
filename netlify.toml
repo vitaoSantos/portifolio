@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Contador de visitas e mural de recados (Netlify Functions + Netlify Blobs)
+[functions]
+  directory = "netlify/functions"
+
 # SPA: todas as rotas caem no index.html
 [[redirects]]
   from = "/*"

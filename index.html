@@ -31,6 +31,13 @@
       <input name="bot-field" />
     </form>
 
+    <!-- Aviso por e-mail de recado novo no mural (o recado em si fica no Netlify Blobs) -->
+    <form name="recado" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nome" />
+      <textarea name="mensagem"></textarea>
+      <input name="bot-field" />
+    </form>
+
     <noscript>Ative o JavaScript para ver o portfólio de Victor dos Santos Soares.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
