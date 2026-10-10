@@ -22,19 +22,34 @@ export const profile = {
   country: 'Brasil',
   timezone: 'America/Sao_Paulo',
   email: 'vsantos.part@gmail.com',
+  // Atualizar a idade todo ano (aniversário em fevereiro)
+  age: 30,
+  maritalStatus: 'Casado',
+  today:
+    'Tenho 30 anos, sou casado e moro em São Lourenço, no sul de Minas. Todo mês estou na sede da empresa, em Poços de Caldas. No Instagram, compartilho conteúdos sobre IA, programação e ensino.',
+  whatsapp: {
+    number: '5535988934837',
+    display: '(35) 98893-4837',
+    message: 'Olá, Victor! Vi seu portfólio e gostaria de conversar.',
+  },
   links: {
     github: 'https://github.com/vitaoSantos',
     linkedin: 'https://www.linkedin.com/in/victor-part-santos',
+    // Preencher com o perfil (ex.: https://www.instagram.com/usuario). Vazio = o Instagram não aparece no site
+    instagram: '',
   },
   handles: {
     github: 'vitaoSantos',
     linkedin: 'victor-part-santos',
+    instagram: '',
   },
   languages: [
     { name: 'Português', level: 'Nativo' },
     { name: 'Inglês', level: 'Profissional' },
   ],
 }
+
+export const whatsappUrl = `https://wa.me/${profile.whatsapp.number}?text=${encodeURIComponent(profile.whatsapp.message)}`
 
 export const stats = [
   { value: 6, suffix: '+', label: 'anos desenvolvendo software' },

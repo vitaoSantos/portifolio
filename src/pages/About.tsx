@@ -1,6 +1,6 @@
 import { useInView } from 'motion/react'
 import { lazy, Suspense, useRef } from 'react'
-import { TbArrowUpRight, TbLanguage, TbMapPin } from 'react-icons/tb'
+import { TbArrowUpRight, TbCake, TbHeart, TbLanguage, TbMapPin } from 'react-icons/tb'
 import { Portrait } from '../components/about/Portrait'
 import { Timeline } from '../components/about/Timeline'
 import { PageTransition } from '../components/layout/PageTransition'
@@ -10,6 +10,7 @@ import { SectionLabel } from '../components/ui/SectionLabel'
 import { education } from '../data/experience'
 import { profile } from '../data/profile'
 import { skillGroups, softSkills } from '../data/skills'
+import { socialLinks } from '../data/social'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 const SkillsSphere = lazy(() => import('../components/three/SkillsSphere'))
@@ -58,34 +59,48 @@ export default function About() {
             ))}
           </div>
 
-          <Reveal className="mt-10 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-line bg-ink-2/70 p-5">
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-faint">
-                <TbMapPin aria-hidden className="text-cyan" /> Localização
-              </p>
-              <p className="mt-2 text-fg">
-                {profile.location} · {profile.country}
-              </p>
-              <p className="mt-1 text-sm text-muted">{profile.locationNote}</p>
-            </div>
-            <div className="rounded-2xl border border-line bg-ink-2/70 p-5">
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-faint">
-                <TbLanguage aria-hidden className="text-cyan" /> Idiomas
-              </p>
-              <p className="mt-2 text-fg">{profile.languages.map((l) => `${l.name} (${l.level.toLowerCase()})`).join(' · ')}</p>
-            </div>
+          <Reveal className="mt-14">
+            <SectionLabel>hoje</SectionLabel>
+            <p className="mt-6 text-lg leading-relaxed text-fg">{profile.today}</p>
           </Reveal>
 
-          <Reveal className="mt-8">
-            <a
-              href={profile.links.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-fg"
-            >
-              Ver perfil completo no LinkedIn
-              <TbArrowUpRight aria-hidden className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </a>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              { icon: TbCake, label: 'Idade', value: `${profile.age} anos` },
+              { icon: TbHeart, label: 'Família', value: profile.maritalStatus },
+              { icon: TbMapPin, label: 'Onde moro', value: `${profile.location} · ${profile.country}`, note: profile.locationNote },
+              {
+                icon: TbLanguage,
+                label: 'Idiomas',
+                value: profile.languages.map((l) => `${l.name} (${l.level.toLowerCase()})`).join(' · '),
+              },
+            ].map((item, i) => (
+              <Reveal as="li" key={item.label} delay={i * 0.05} className="rounded-2xl border border-line bg-ink-2/70 p-5">
+                <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-faint">
+                  <item.icon aria-hidden className="text-cyan" /> {item.label}
+                </p>
+                <p className="mt-2 text-fg">{item.value}</p>
+                {item.note && <p className="mt-1 text-sm text-muted">{item.note}</p>}
+              </Reveal>
+            ))}
+          </ul>
+
+          <Reveal className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            {socialLinks
+              .filter((s) => s.id === 'linkedin' || s.id === 'instagram')
+              .map((s) => (
+                <a
+                  key={s.id}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-fg"
+                >
+                  <s.icon aria-hidden className="text-base text-cyan" />
+                  {s.id === 'linkedin' ? 'Perfil completo no LinkedIn' : 'Conteúdos sobre IA, programação e ensino no Instagram'}
+                  <TbArrowUpRight aria-hidden className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              ))}
           </Reveal>
         </div>
       </section>

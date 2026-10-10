@@ -1,8 +1,9 @@
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
 import { useEffect, useState } from 'react'
-import { TbBrandGithub, TbBrandLinkedin, TbMenu2, TbX } from 'react-icons/tb'
+import { TbMenu2, TbX } from 'react-icons/tb'
 import { Link, useLocation } from 'react-router'
 import { profile } from '../../data/profile'
+import { socialLinks } from '../../data/social'
 import { Magnetic } from '../ui/Magnetic'
 import { easeExpo, easeOut } from '../ui/motion'
 import { isActivePath, navLinks } from './nav'
@@ -78,24 +79,18 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-1">
-            <a
-              href={profile.links.github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="hidden size-10 place-items-center rounded-full text-muted transition-colors hover:text-fg sm:grid"
-            >
-              <TbBrandGithub className="text-xl" aria-hidden />
-            </a>
-            <a
-              href={profile.links.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="hidden size-10 place-items-center rounded-full text-muted transition-colors hover:text-fg sm:grid"
-            >
-              <TbBrandLinkedin className="text-xl" aria-hidden />
-            </a>
+            {socialLinks.map((s) => (
+              <a
+                key={s.id}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="hidden size-10 place-items-center rounded-full text-muted transition-colors hover:text-fg sm:grid md:hidden xl:grid"
+              >
+                <s.icon className="text-xl" aria-hidden />
+              </a>
+            ))}
             <div className="hidden md:block">
               <Magnetic>
                 <Link
@@ -168,13 +163,12 @@ function MobileMenu({ pathname }: { pathname: string }) {
         <a href={`mailto:${profile.email}`} className="font-mono text-fg">
           {profile.email}
         </a>
-        <div className="flex gap-6">
-          <a href={profile.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-fg">
-            <TbBrandGithub aria-hidden /> GitHub
-          </a>
-          <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-fg">
-            <TbBrandLinkedin aria-hidden /> LinkedIn
-          </a>
+        <div className="flex flex-wrap gap-x-6 gap-y-3">
+          {socialLinks.map((s) => (
+            <a key={s.id} href={s.href} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-fg">
+              <s.icon aria-hidden /> {s.label}
+            </a>
+          ))}
         </div>
       </motion.div>
     </motion.div>

@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { lazy, Suspense, useEffect, useState } from 'react'
-import { TbArrowRight, TbBrandGithub, TbBrandLinkedin, TbMapPin } from 'react-icons/tb'
+import { TbArrowRight, TbMapPin } from 'react-icons/tb'
 import { Link } from 'react-router'
 import { useIntro } from '../../context/IntroContext'
 import { profile } from '../../data/profile'
+import { socialLinks } from '../../data/social'
 import { useIsDesktop } from '../../hooks/useMediaQuery'
 import { Magnetic } from '../ui/Magnetic'
 import { easeOut } from '../ui/motion'
@@ -111,12 +112,11 @@ export function HomeHero() {
           <span className="flex items-center gap-2">
             <TbMapPin aria-hidden className="text-cyan" /> {profile.location}
           </span>
-          <a href={profile.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-fg">
-            <TbBrandGithub aria-hidden /> GitHub
-          </a>
-          <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-fg">
-            <TbBrandLinkedin aria-hidden /> LinkedIn
-          </a>
+          {socialLinks.map((s) => (
+            <a key={s.id} href={s.href} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-fg">
+              <s.icon aria-hidden /> {s.label}
+            </a>
+          ))}
         </motion.div>
       </div>
 

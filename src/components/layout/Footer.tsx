@@ -1,6 +1,7 @@
-import { TbArrowUpRight, TbBrandGithub, TbBrandLinkedin, TbMail } from 'react-icons/tb'
+import { TbArrowUpRight, TbMail } from 'react-icons/tb'
 import { Link } from 'react-router'
 import { profile } from '../../data/profile'
+import { socialLinks } from '../../data/social'
 import { navLinks } from './nav'
 
 export function Footer() {
@@ -34,18 +35,14 @@ export function Footer() {
         <div>
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-faint">Conecte-se</p>
           <ul className="grid gap-2 text-sm">
-            <li>
-              <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 text-muted hover:text-fg">
-                <TbBrandLinkedin aria-hidden /> LinkedIn
-                <TbArrowUpRight aria-hidden className="opacity-0 transition-opacity group-hover:opacity-100" />
-              </a>
-            </li>
-            <li>
-              <a href={profile.links.github} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 text-muted hover:text-fg">
-                <TbBrandGithub aria-hidden /> GitHub
-                <TbArrowUpRight aria-hidden className="opacity-0 transition-opacity group-hover:opacity-100" />
-              </a>
-            </li>
+            {socialLinks.map((s) => (
+              <li key={s.id}>
+                <a href={s.href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 text-muted hover:text-fg">
+                  <s.icon aria-hidden /> {s.label}
+                  <TbArrowUpRight aria-hidden className="opacity-0 transition-opacity group-hover:opacity-100" />
+                </a>
+              </li>
+            ))}
             <li>
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 text-muted hover:text-fg">
                 <TbMail aria-hidden /> {profile.email}
