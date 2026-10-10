@@ -35,13 +35,12 @@ export const profile = {
   links: {
     github: 'https://github.com/vitaoSantos',
     linkedin: 'https://www.linkedin.com/in/victor-part-santos',
-    // Preencher com o perfil (ex.: https://www.instagram.com/usuario). Vazio = o Instagram não aparece no site
-    instagram: '',
+    instagram: 'https://www.instagram.com/viitao.santos/',
   },
   handles: {
     github: 'vitaoSantos',
     linkedin: 'victor-part-santos',
-    instagram: '',
+    instagram: 'viitao.santos',
   },
   languages: [
     { name: 'Português', level: 'Nativo' },
