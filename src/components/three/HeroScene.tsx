@@ -249,7 +249,7 @@ export default function HeroScene({ offsetX = 0, mobile = false }: { offsetX?: n
       <Canvas
         frameloop={visible ? 'always' : 'never'}
         camera={{ position: [0, 0, 10], fov: 45 }}
-        dpr={[1, mobile ? 1.5 : 1.75]}
+        dpr={[1, mobile ? 1.25 : 1.75]}
         gl={{ antialias: false, alpha: false, powerPreference: 'high-performance' }}
         aria-hidden
       >

@@ -46,7 +46,7 @@ export const timeline: TimelineEntry[] = [
     place: 'São Lourenço, MG',
     kind: 'trabalho',
     description:
-      'Sistema monolítico crítico com mais de 3.000 clientes simultâneos. Diagnóstico de gargalos em código legado, melhorias de arquitetura, logs e monitoramento, otimização de banco e mentoria de novos desenvolvedores.',
+      'Construção, integração e manutenção entre uma aplicação contábil e uma aplicação comercial, em um sistema crítico com mais de 3.000 clientes simultâneos. Diagnóstico de gargalos de performance em produção, melhorias de arquitetura, logs e monitoramento, modelagem de SQL Server para grandes volumes de dados e treinamento dos novos desenvolvedores do squad.',
     tags: ['Java', 'Java EE', 'SQL Server', 'MVC', 'Scrum'],
   },
   {
@@ -65,7 +65,7 @@ export const timeline: TimelineEntry[] = [
     place: 'Remoto · time internacional',
     kind: 'trabalho',
     description:
-      'APIs RESTful em Java e Spring para aplicações financeiras, integração com gateways de pagamento (PayPal, Amazon Pay) e mensageria assíncrona com RabbitMQ. Comunicação diária em inglês.',
+      'Empresa internacional, em um time multicultural de 10 pessoas com reuniões em inglês. Criação e manutenção de APIs RESTful em Java e Spring para aplicações financeiras, integração com gateways de pagamento (PayPal, Amazon Pay), mensageria assíncrona com RabbitMQ e documentação de código e APIs.',
     tags: ['Java', 'Spring', 'RabbitMQ', 'Event-driven'],
   },
   {
@@ -84,7 +84,8 @@ export const timeline: TimelineEntry[] = [
     place: 'São Lourenço, MG',
     kind: 'ensino',
     description:
-      'Disciplinas de Arquitetura de Computadores, Sistemas Operacionais e Redes. Planejamento de aulas práticas e teóricas, avaliação e orientação de projetos.',
+      'Minha primeira experiência como professor. Ministrei Fundamentos e Arquitetura de Computadores, Sistemas Operacionais, Redes de Computadores e Java, com aulas teóricas e práticas, avaliações e orientação de projetos dos alunos.',
+    tags: ['Arquitetura de Computadores', 'Sistemas Operacionais', 'Redes', 'Java'],
   },
   {
     year: '2025',

@@ -41,6 +41,13 @@ function RotatingWords({ words }: { words: string[] }) {
 export function HomeHero() {
   const { introDone } = useIntro()
   const desktop = useIsDesktop()
+  // Cria o WebGL só depois da transição de página, para não disputar a thread com a animação
+  const [sceneReady, setSceneReady] = useState(false)
+
+  useEffect(() => {
+    const id = setTimeout(() => setSceneReady(true), 650)
+    return () => clearTimeout(id)
+  }, [])
 
   const fade = (delay: number) => ({
     initial: { opacity: 0, y: 20 },
@@ -51,11 +58,15 @@ export function HomeHero() {
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
       <div
-        className={`absolute inset-0 [mask-image:linear-gradient(to_bottom,#000_65%,transparent)] ${desktop ? '' : 'opacity-60'}`}
+        className={`absolute inset-0 transition-opacity duration-1000 [mask-image:linear-gradient(to_bottom,#000_65%,transparent)] ${
+          sceneReady ? (desktop ? 'opacity-100' : 'opacity-60') : 'opacity-0'
+        }`}
       >
-        <Suspense fallback={null}>
-          <HeroScene offsetX={desktop ? 2.7 : 0} mobile={!desktop} />
-        </Suspense>
+        {sceneReady && (
+          <Suspense fallback={null}>
+            <HeroScene offsetX={desktop ? 2.7 : 0} mobile={!desktop} />
+          </Suspense>
+        )}
       </div>
       {/* Escurece a área do texto para manter a leitura sobre o 3D */}
       <div

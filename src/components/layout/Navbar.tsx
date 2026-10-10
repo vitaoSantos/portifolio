@@ -122,11 +122,10 @@ export function Navbar() {
 function MobileMenu({ pathname }: { pathname: string }) {
   return (
     <motion.div
-      className="fixed inset-0 z-40 flex flex-col justify-between bg-ink/95 px-6 pb-10 pt-28 backdrop-blur-xl md:hidden"
+      className="fixed inset-0 z-40 flex flex-col justify-between bg-ink px-6 pb-10 pt-28 md:hidden"
       initial={{ clipPath: 'inset(0 0 100% 0)' }}
-      animate={{ clipPath: 'inset(0 0 0% 0)' }}
-      exit={{ clipPath: 'inset(0 0 100% 0)' }}
-      transition={{ duration: 0.6, ease: easeExpo }}
+      animate={{ clipPath: 'inset(0 0 0% 0)', transition: { duration: 0.5, ease: easeExpo } }}
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
     >
       <nav aria-label="Menu">
         <ul className="flex flex-col gap-2">

@@ -4,6 +4,7 @@ import { SiOpenjdk, SiPhp } from 'react-icons/si'
 import { TbSchool } from 'react-icons/tb'
 import { PageTransition } from '../components/layout/PageTransition'
 import { CodePanel } from '../components/teaching/CodePanel'
+import { FirstTeaching } from '../components/teaching/FirstTeaching'
 import type { Lang } from '../components/teaching/highlight'
 import { RunOutput } from '../components/teaching/RunOutput'
 import { easeOut } from '../components/ui/motion'
@@ -24,12 +25,23 @@ export default function Teaching() {
     <PageTransition>
       <PageHeader
         label="ensino"
-        title="POO em Java e PHP"
-        lead={`No ${teaching.period}, dei aula de Programação Orientada a Objetos para duas turmas na ${teaching.institution}: uma aprendeu em Java e a outra em PHP. Estes são os conceitos que trabalhei, lado a lado nas duas linguagens.`}
+        title="Professor universitário"
+        lead={`Desde 2024 dou aula na ${teaching.institution}, ajudando a formar os próximos profissionais de computação. Da arquitetura de computadores à orientação a objetos, levo para a sala de aula a experiência de quem desenvolve software todos os dias.`}
       />
 
+      <FirstTeaching />
+
       <section className="container-x pb-12">
-        <Reveal className="flex flex-wrap gap-3">
+        <Reveal>
+          <SectionLabel>{teaching.period}</SectionLabel>
+          <h2 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            POO em <span className="text-gradient">Java e PHP</span>
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+            Dei Programação Orientada a Objetos para duas turmas: uma aprendeu em Java e a outra em PHP. Estes são os conceitos que trabalhei, lado a lado nas duas linguagens.
+          </p>
+        </Reveal>
+        <Reveal className="mt-8 flex flex-wrap gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-2 text-sm text-muted">
             <TbSchool aria-hidden className="text-cyan" /> {teaching.institution} · {teaching.period}
           </span>

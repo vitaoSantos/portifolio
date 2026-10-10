@@ -15,7 +15,7 @@ export const profile = {
     'Sou engenheiro de software full stack com foco em IA aplicada. Minha história com tecnologia começou atrás do balcão de uma lan house em Valença (RJ), atendendo clientes e consertando computadores. Hoje construo sistemas usados por milhares de pessoas ao mesmo tempo.',
     'Atuei em sistemas críticos com mais de 3.000 usuários simultâneos, liderando melhorias de performance, estabilidade e observabilidade em aplicações legadas. Trabalho com microsserviços em PHP, arquitetura orientada a eventos com Swoole e RabbitMQ, e com Java e Spring em aplicações financeiras e integrações com gateways de pagamento. Também criei sozinho, de ponta a ponta, produtos como a Amplitur, o Nestory e o Toylog.',
     'A IA faz parte do meu dia a dia. O Claude é minha principal ferramenta, e levo IA para produção em automações com n8n e em soluções como a categorização inteligente de produtos com análise de preço médio de mercado.',
-    'Também sou professor universitário. Já ensinei Arquitetura de Computadores, Sistemas Operacionais e Redes e, no último semestre, Programação Orientada a Objetos para duas turmas, uma em Java e outra em PHP. Ensinar fortaleceu minha comunicação técnica e a forma como explico decisões para o time.',
+    'Também sou professor universitário. Na minha primeira experiência em sala de aula, ensinei Fundamentos e Arquitetura de Computadores, Sistemas Operacionais, Redes de Computadores e Java. No último semestre, dei Programação Orientada a Objetos para duas turmas, uma em Java e outra em PHP. Ensinar fortaleceu minha comunicação técnica e a forma como explico decisões para o time.',
   ],
   location: 'São Lourenço, MG',
   locationNote: 'Todo mês na sede da empresa, em Poços de Caldas',
@@ -54,7 +54,7 @@ export const stats = [
   { value: 6, suffix: '+', label: 'anos desenvolvendo software' },
   { value: 3000, suffix: '+', label: 'usuários simultâneos em sistema crítico' },
   { value: 2, suffix: '', label: 'pós-graduações em tecnologia' },
-  { value: 1, suffix: '+', label: 'ano como professor universitário' },
+  { value: 5, suffix: '', label: 'disciplinas ministradas como professor universitário' },
 ]
 
 export const aiWorkflow = [

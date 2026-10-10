@@ -1,3 +1,6 @@
+import { SiOpenjdk } from 'react-icons/si'
+import { TbCpu, TbDeviceDesktopCog, TbNetwork } from 'react-icons/tb'
+
 export type OopConcept = {
   id: string
   title: string
@@ -15,6 +18,36 @@ export const teaching = {
   classes: [
     { name: 'Turma de Java', language: 'Java' },
     { name: 'Turma de PHP', language: 'PHP' },
+  ],
+}
+
+// Primeira experiência como professor (fev/2024 – abr/2025)
+export const firstTeaching = {
+  period: 'fev/2024 – abr/2025',
+  intro:
+    'Ser professor universitário me deu a oportunidade de compartilhar o que aprendi na prática e contribuir para a formação de futuros profissionais de computação.',
+  quote:
+    'Considero essa experiência extremamente gratificante e desafiadora, pois me permite estar em constante atualização com as novas tecnologias e metodologias de ensino.',
+  subjects: [
+    { id: 'arquitetura', name: 'Fundamentos e Arquitetura de Computadores', icon: TbCpu },
+    { id: 'so', name: 'Sistemas Operacionais', icon: TbDeviceDesktopCog },
+    { id: 'redes', name: 'Redes de Computadores', icon: TbNetwork },
+    { id: 'java', name: 'Java', icon: SiOpenjdk },
+  ],
+  activities: [
+    'Planejamento e condução de aulas teóricas e práticas',
+    'Avaliação de trabalhos e provas',
+    'Orientação de alunos em projetos e trabalhos do curso',
+    'Participação em reuniões de departamento e colegiado',
+    'Atualização constante do conhecimento técnico e pedagógico',
+  ],
+  skills: [
+    'Domínio dos conteúdos das disciplinas',
+    'Planejamento e organização de aulas',
+    'Comunicação e didática',
+    'Avaliação e feedback',
+    'Trabalho em equipe com outros professores',
+    'Pesquisa e atualização profissional',
   ],
 }
 

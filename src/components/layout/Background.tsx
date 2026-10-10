@@ -1,12 +1,13 @@
-// Brilhos de fundo e textura granulada fixos em toda a página
+// Brilhos de fundo e textura granulada fixos em toda a página.
+// Os brilhos usam gradiente radial em vez de filter: blur, que pesa muito no celular.
 export function Background() {
   return (
     <>
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-[25%] -top-[30%] size-[75vmax] rounded-full bg-violet/[0.13] blur-[130px]" />
-        <div className="absolute -right-[30%] top-[35%] size-[65vmax] rounded-full bg-cyan/[0.08] blur-[150px]" />
-      </div>
-      <div aria-hidden className="grain" />
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(60vmax_60vmax_at_0%_0%,rgb(139_92_246/0.14),transparent_70%),radial-gradient(55vmax_55vmax_at_100%_65%,rgb(34_211_238/0.08),transparent_70%)]"
+      />
+      <div aria-hidden className="grain hidden md:block" />
     </>
   )
 }
