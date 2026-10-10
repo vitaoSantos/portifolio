@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.env.*
+*.local
+.netlify
+
+# Exportação do LinkedIn (contém telefone e dados pessoais)
+linkedin/
