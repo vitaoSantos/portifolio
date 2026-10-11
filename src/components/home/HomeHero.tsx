@@ -4,6 +4,7 @@ import { TbArrowRight, TbMapPin } from 'react-icons/tb'
 import { Link } from 'react-router'
 import { useIntro } from '../../context/IntroContext'
 import { profile } from '../../data/profile'
+import { projectsVisible } from '../../data/projects'
 import { socialLinks } from '../../data/social'
 import { useIsDesktop } from '../../hooks/useMediaQuery'
 import { Magnetic } from '../ui/Magnetic'
@@ -100,15 +101,17 @@ export function HomeHero() {
         </motion.p>
 
         <motion.div {...fade(0.85)} className="mt-10 flex flex-wrap items-center gap-4">
-          <Magnetic>
-            <Link
-              to="/projetos"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-4 font-semibold text-ink shadow-[0_0_40px_-8px_rgb(139_92_246/0.7)] transition-[filter] hover:brightness-110"
-            >
-              Ver projetos
-              <TbArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </Magnetic>
+          {projectsVisible && (
+            <Magnetic>
+              <Link
+                to="/projetos"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-4 font-semibold text-ink shadow-[0_0_40px_-8px_rgb(139_92_246/0.7)] transition-[filter] hover:brightness-110"
+              >
+                Ver projetos
+                <TbArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </Magnetic>
+          )}
           <Magnetic>
             <Link
               to="/contato"
