@@ -9,6 +9,7 @@ import { Navbar } from './components/layout/Navbar'
 import { SmoothScroll } from './components/layout/SmoothScroll'
 import { IntroProvider } from './context/IntroContext'
 import { VisitsProvider } from './context/VisitsContext'
+import { projectsVisible } from './data/projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
@@ -33,8 +34,9 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<About />} />
-        <Route path="/projetos" element={<Projects />} />
-        <Route path="/projetos/:slug" element={<ProjectDetail />} />
+        {/* Enquanto os projetos estão ocultos, links antigos voltam para o início */}
+        <Route path="/projetos" element={projectsVisible ? <Projects /> : <Navigate to="/" replace />} />
+        <Route path="/projetos/:slug" element={projectsVisible ? <ProjectDetail /> : <Navigate to="/" replace />} />
         <Route path="/ensino" element={<Teaching />} />
         <Route path="/prototipos" element={<Navigate to="/ensino" replace />} />
         <Route path="/contato" element={<Contact />} />

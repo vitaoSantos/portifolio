@@ -8,6 +8,9 @@ import salaDoReiCover from '../assets/projects/saladorei.webp'
 import toylogCover from '../assets/projects/toylog.webp'
 import wevoCover from '../assets/projects/wevo.svg'
 
+// Página de projetos em reformulação: troque para true para voltar a exibir
+export const projectsVisible = false
+
 export type ProjectCategory = 'Plataformas' | 'E-commerce' | 'Social' | 'Dados e IA'
 
 export type Project = {
