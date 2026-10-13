@@ -70,6 +70,7 @@ export const projects: Project[] = [
       'Painel com senha e dados no Netlify Blobs, sem banco de dados para manter',
       'Contador de visitas e mural de recados com proteção contra spam',
     ],
+    link: 'https://angelmodas.netlify.app/',
     github: 'https://github.com/vitaoSantos/angelmodas',
   },
   {
@@ -98,6 +99,7 @@ export const projects: Project[] = [
       'Rótulos dos temas desenhados em canvas nos momentos ociosos do navegador',
       'Painel com senha e dados no Netlify Blobs, sem banco de dados para manter',
     ],
+    link: 'https://chocofeliz.netlify.app/',
     github: 'https://github.com/vitaoSantos/chocofeliz',
   },
   {
@@ -126,6 +128,7 @@ export const projects: Project[] = [
       'Artes dos painéis desenhadas em canvas a partir dos temas',
       'Painel com senha para itens, mural de festas, opções e recados, com dados no Netlify Blobs',
     ],
+    link: 'https://angheldecora.netlify.app/',
     github: 'https://github.com/vitaoSantos/angheldecora',
   },
 ]
