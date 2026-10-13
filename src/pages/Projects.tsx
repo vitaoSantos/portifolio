@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'
-import { TbArrowUpRight, TbLock, TbShieldLock, TbWorld } from 'react-icons/tb'
+import { TbArrowUpRight, TbBrandGithub, TbLock, TbShieldLock, TbWorld } from 'react-icons/tb'
 import { Link } from 'react-router'
 import { PageTransition } from '../components/layout/PageTransition'
 import { ProjectCover } from '../components/projects/ProjectCover'
@@ -31,6 +31,10 @@ function ProjectCard({ project }: { project: Project }) {
             ) : project.internal ? (
               <span className="flex items-center gap-1.5 text-xs text-faint">
                 <TbShieldLock aria-hidden /> Sistema interno
+              </span>
+            ) : project.github ? (
+              <span className="flex items-center gap-1.5 text-xs text-faint">
+                <TbBrandGithub aria-hidden /> Código aberto
               </span>
             ) : (
               project.privateCode && (
@@ -74,7 +78,7 @@ export default function Projects() {
       <PageHeader
         label="projetos"
         title="Projetos"
-        lead="Produtos reais, no ar e usados por clientes: plataformas, e-commerce, comunidades e soluções com IA. São projetos corporativos, então o código não é público, mas a maioria você pode visitar."
+        lead="Sites para pequenos negócios de verdade, com 3D, configuradores e um painel próprio para o dono cuidar do conteúdo sem mexer no código. O código de todos está aberto no GitHub."
       />
 
       <section className="container-x pb-32">

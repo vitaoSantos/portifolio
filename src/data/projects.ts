@@ -1,4 +1,7 @@
 import ampliturCover from '../assets/projects/amplitur.webp'
+import anghelDecoraCover from '../assets/projects/angheldecora.webp'
+import anghelModasCover from '../assets/projects/anghelmodas.webp'
+import chocoFelizCover from '../assets/projects/chocofeliz.webp'
 import egApostasCover from '../assets/projects/eg-apostas.svg'
 import facilAquiCover from '../assets/projects/facilaqui.webp'
 import flopCover from '../assets/projects/floppoker.jpg'
@@ -8,10 +11,10 @@ import salaDoReiCover from '../assets/projects/saladorei.webp'
 import toylogCover from '../assets/projects/toylog.webp'
 import wevoCover from '../assets/projects/wevo.svg'
 
-// Página de projetos em reformulação: troque para true para voltar a exibir
-export const projectsVisible = false
+// Troque para false para esconder a aba de projetos do site
+export const projectsVisible = true
 
-export type ProjectCategory = 'Plataformas' | 'E-commerce' | 'Social' | 'Dados e IA'
+export type ProjectCategory = 'Moda' | 'Confeitaria' | 'Festas e eventos' | 'Plataformas' | 'E-commerce' | 'Social' | 'Dados e IA'
 
 export type Project = {
   slug: string
@@ -41,6 +44,94 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'anghel-modas',
+    title: 'Anghel Modas',
+    summary: 'Vitrine de moda feminina com catálogo em arara 3D, provador para montar o look e painel próprio para a loja cadastrar as peças.',
+    category: 'Moda',
+    tags: ['React', 'TypeScript', 'Three.js', 'Netlify Functions', 'Claude API'],
+    cover: anghelModasCover,
+    featured: true,
+    role: 'Desenvolvedor full stack',
+    solo: true,
+    about:
+      'Site-vitrine de uma loja de moda feminina. As novidades passam na capa como uma revista, as peças ficam penduradas numa arara 3D que balança quando a cliente arrasta, e no provador ela monta o look com as fotos das peças e pede pelo WhatsApp com tudo já escrito. A loja cuida do catálogo num painel próprio, sem mexer no código.',
+    highlights: [
+      'Catálogo em arara 3D: cabides dourados que balançam com o movimento e etiqueta com nome, cores e preço',
+      'Provador com parte de cima, parte de baixo ou peça inteira, pedido pelo WhatsApp e foto do look para compartilhar',
+      'Fundo da foto da peça removido na hora, no próprio navegador e sem custo',
+      'Cadastro da peça preenchido a partir da foto com a API do Claude, para a loja só conferir e salvar',
+      'Painel com catálogo, mural de clientes, opções do site e moderação dos recados',
+      'Arara mais leve no celular: resolução 1×, menos cabides montados e cena desmontada longe da tela',
+    ],
+    contributions: [
+      'Criei o projeto sozinho, do conceito à publicação, desenvolvendo com o Claude Code',
+      'Arara 3D com React Three Fiber e provador virtual com o recorte das peças',
+      'Painel com senha e dados no Netlify Blobs, sem banco de dados para manter',
+      'Contador de visitas e mural de recados com proteção contra spam',
+    ],
+    github: 'https://github.com/vitaoSantos/angelmodas',
+  },
+  {
+    slug: 'chocofeliz',
+    title: 'ChocoFeliz',
+    summary: 'Mostruário de pirulitos de chocolate personalizados, com uma abertura em 3D em que o pirulito é desembrulhado conforme a página rola.',
+    category: 'Confeitaria',
+    tags: ['React', 'TypeScript', 'Three.js', 'Shaders', 'Netlify Functions'],
+    cover: chocoFelizCover,
+    featured: true,
+    role: 'Desenvolvedor full stack',
+    solo: true,
+    about:
+      'Site de uma marca de pirulitos de chocolate personalizados para festas. A abertura conta a história do produto em 3D: o pirulito se monta sozinho e, conforme a pessoa rola a página, o laço se desfaz, o celofane se abre e cada parte aparece separada. No "Monte o seu", o cliente escolhe tema, nome, idade, chocolate, embalagem e fitilho e vê o pirulito mudar na hora.',
+    highlights: [
+      'Abertura 3D feita toda em código, sem modelos prontos: o pirulito desembrulha com o scroll e se embrulha de novo ao voltar',
+      'Celofane com shader próprio que se abre como uma flor e se dissolve em faíscas douradas',
+      'Configurador 3D com 26 temas, incluindo "Sua arte", e fitilho de uma ou duas cores',
+      'Pedido pelo WhatsApp e formulário de contato que já levam o pirulito montado',
+      'Painel para o mural de festas, para ligar e desligar chocolates e temas e para moderar os recados',
+      'Shaders preparados atrás da tela de carregamento e resolução que se ajusta ao aparelho',
+    ],
+    contributions: [
+      'Criei o projeto sozinho, do conceito à publicação, desenvolvendo com o Claude Code',
+      'Cena 3D com React Three Fiber, animada pelo scroll',
+      'Rótulos dos temas desenhados em canvas nos momentos ociosos do navegador',
+      'Painel com senha e dados no Netlify Blobs, sem banco de dados para manter',
+    ],
+    github: 'https://github.com/vitaoSantos/chocofeliz',
+  },
+  {
+    slug: 'anghel-decora',
+    title: 'Anghel Decora',
+    summary: 'Site de decoração de festas e aluguel Pegue e Monte, com um configurador 3D em que o cliente monta o cenário da festa.',
+    category: 'Festas e eventos',
+    tags: ['React', 'TypeScript', 'Three.js', 'Canvas', 'Netlify Functions'],
+    cover: anghelDecoraCover,
+    featured: true,
+    role: 'Desenvolvedor full stack',
+    solo: true,
+    about:
+      'Site de uma empresa de decoração de festas que também aluga os itens no formato Pegue e Monte. Na abertura, o cenário da festa se monta sozinho em 3D: o tapete desenrola, o painel cai quicando, os balões enchem e cai confete. No "Monte seu cenário", o cliente escolhe tema, painel, cilindros, mesa, bolo e arco de balões e pede o orçamento pelo WhatsApp com tudo descrito.',
+    highlights: [
+      'Abertura em que o cenário 3D se monta sozinho e vai trocando de tema',
+      'Configurador 3D com 13 temas desenhados, cor lisa ou a arte do próprio cliente, com nome e idade no painel',
+      'Itens para alugar com filtro por categoria, ficha com fotos e pedido pelo WhatsApp',
+      'Kits cadastrados com a arte do painel viram temas de verdade no configurador',
+      'Foto do cenário montado no formato do feed, com o logo e o @ da loja',
+      'Balões e confete instanciados, com menos polígonos no celular',
+    ],
+    contributions: [
+      'Criei o projeto sozinho, do conceito à publicação, desenvolvendo com o Claude Code',
+      'Cena 3D feita em código: painéis, cilindros, mesas, bolo, balões e confete',
+      'Artes dos painéis desenhadas em canvas a partir dos temas',
+      'Painel com senha para itens, mural de festas, opções e recados, com dados no Netlify Blobs',
+    ],
+    github: 'https://github.com/vitaoSantos/angheldecora',
+  },
+]
+
+// Projetos da Nown: guardados aqui, mas não são exibidos no site por enquanto
+export const nownProjects: Project[] = [
   {
     slug: 'amplitur',
     title: 'Amplitur',
@@ -284,7 +375,15 @@ export const projects: Project[] = [
   },
 ]
 
-export const projectCategories: ProjectCategory[] = ['Plataformas', 'E-commerce', 'Social', 'Dados e IA']
+export const projectCategories: ProjectCategory[] = [
+  'Moda',
+  'Confeitaria',
+  'Festas e eventos',
+  'Plataformas',
+  'E-commerce',
+  'Social',
+  'Dados e IA',
+]
 
 export const featuredProjects = projects.filter((p) => p.featured)
 

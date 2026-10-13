@@ -46,6 +46,13 @@ function Access({ project }: { project: Project }) {
       </span>
     )
   }
+  if (project.github) {
+    return (
+      <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-cyan">
+        <TbBrandGithub aria-hidden /> Ver no GitHub <TbArrowUpRight aria-hidden />
+      </a>
+    )
+  }
   return <span className="text-muted">Não publicado</span>
 }
 
